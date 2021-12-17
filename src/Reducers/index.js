@@ -16,7 +16,7 @@ const fetchQuestionsReducer = (questions = [], action) => {
 
 const setScore = (score = 0, action) => {
 	if (action.type === 'SCORE') {
-		return score + action.payload;
+		return action.payload + score;
 	}
 	return score;
 };

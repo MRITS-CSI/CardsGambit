@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getQuestions } from '../actions';
-import Options from './Options';
-import Timer from './Timer';
+// import Options from './Options';
+// import Timer from './Timer';
 
 const Question = (props) => {
 	useEffect(() => {
@@ -32,13 +32,12 @@ const Question = (props) => {
 					<div class="back face">{ques()}</div>
 				</div>
 			</div>
-			<Options />
-			<Timer />
+			
 		</>
 	);
 };
 const mapStateToProps = (state) => {
-	console.log(state);
+	//console.log(state);
 	return { index: state.qIndex, questions: state.questions };
 };
 export default connect(mapStateToProps, { getQuestions })(Question);

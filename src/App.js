@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Components/Login';
 import Question from './Components/Question';
-// import Options from './Components/Options';
-// import Timer from './Components/Timer';
+ import Options from './Components/Options';
+ import Timer from './Components/Timer';
 import { checkToken } from './Utils/LoginHandler';
 
 const App = () => {
@@ -22,11 +22,17 @@ const App = () => {
 
 	if (loginStat) {
 		return (
-			<div className="container">
+			<div className="contain">
 				<BrowserRouter>
 					<Routes>
 						<Route exact path="/" element={<Login />}></Route>
-						<Route path="/card" element={<Question />}></Route>
+						<Route path="/card" element={<>
+							<Timer />
+						<Question />
+						<Options />
+						
+						</>
+					}></Route>
 					</Routes>
 				</BrowserRouter>
 			</div>

@@ -7,7 +7,7 @@ const Options = (props) => {
 	let [previous, setPrevious] = useState('option1');
 	let [ans, setAns] = useState('');
 	const nextButtonHandler = (e) => {
-		console.log(props);
+	//	console.log(props);
 		if ([10, 11, 12, 25, 24, 23].includes(props.index)) {
 			ans === props.questions[props.index].answer && props.setScore(3);
 		} else {
