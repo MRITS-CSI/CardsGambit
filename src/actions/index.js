@@ -14,7 +14,7 @@ export const getQuestions = () => async (dispatch, _getState) => {
 	let data1 = await API.get(`/cards/${val[0]}`);
 	let data2 = await API.get(`/cards/${val[1]}`);
 	let data = [...data1.data, ...data2.data];
-	console.log(data);
+	//	console.log(data);
 	dispatch({ type: 'FETCH_QUES', payload: data });
 };
 

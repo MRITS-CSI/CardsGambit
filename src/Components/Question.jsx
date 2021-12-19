@@ -12,17 +12,34 @@ const Question = (props) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	let ques = () => {
-		if (props.questions[props.index])
+		if (props.questions[props.index]) {
+			console.log(props.questions[props.index].cardType);
+
 			return props.questions[props.index].question;
+		}
 		return '';
 	};
+	let card = () => {
+		if (props.questions[props.index] && props.questions[props.index].cardType) {
+			if (props.index > 13) {
+				return require(`../Assets/${+props.index - 13}${props.questions[
+					props.index
+				].cardType.toLowerCase()}.png`);
+			}
+			return require(`../Assets/${+props.index + 1}${props.questions[
+				props.index
+			].cardType.toLowerCase()}.png`);
+		}
+		return require('../Assets/1spades.png');
+	};
+
 	return (
 		<>
 			<div class="flip-container" id="merlin">
 				<div class="flip-card">
 					<div class="front face">
 						<img
-							src={require('../Assets/1spades.png')}
+							src={card()}
 							width="200px"
 							height="265px"
 							id="card"
@@ -32,7 +49,6 @@ const Question = (props) => {
 					<div class="back face">{ques()}</div>
 				</div>
 			</div>
-			
 		</>
 	);
 };

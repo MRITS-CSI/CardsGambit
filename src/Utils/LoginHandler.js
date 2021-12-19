@@ -7,7 +7,7 @@ import axios from 'axios';
  */
 export const checkLogin = async (username, password) => {
 	try {
-		let { data } = await axios.post('http://localhost:8000/api/v1/login', {
+		let { data } = await axios.post('https://csimrits.tech/api/v1/login', {
 			username,
 			password,
 		});
@@ -27,7 +27,7 @@ export const checkToken = async (token) => {
 	//	console.log(token);
 	if (!token) return false;
 
-	let { data } = await axios.post('http://localhost:8000/api/v1/login/check', {
+	let { data } = await axios.post('https://csimrits.tech/api/v1/login/check', {
 		jwt: token,
 	});
 
