@@ -22,7 +22,7 @@ const Question = (props) => {
 	let card = () => {
 		if (props.questions[props.index] && props.questions[props.index].cardType) {
 			if (props.index >= 13) {
-				return require(`../Assets/${+props.index - 13}${props.questions[
+				return require(`../Assets/${+props.index - 12}${props.questions[
 					props.index
 				].cardType.toLowerCase()}.png`);
 			}
