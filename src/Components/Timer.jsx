@@ -15,7 +15,7 @@ const Timers = (props) => {
   // }, [finalTime]);
 
   useEffect(() => {
-    let finalTime = moment().add(30, "seconds");
+    let finalTime = moment().add(20, "seconds");
 
     const timeout = setTimeout(async () => {
       try {
@@ -39,7 +39,7 @@ const Timers = (props) => {
       } catch (err) {
         alert(err.message);
       }
-    }, 30 * 1000);
+    }, 20 * 1000);
 
     const timer = setInterval(() => {
       setDiff(moment(finalTime - moment().subtract(30, "minutes")));
